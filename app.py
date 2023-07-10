@@ -53,7 +53,7 @@ def process_pdf():
 
     text_splitter = CharacterTextSplitter(
         separator="\n",
-        chunk_size=1000,
+        chunk_size=500,
         chunk_overlap=200,
         length_function=len
     )

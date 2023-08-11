@@ -78,7 +78,7 @@ def answer_question():
     docs = knowledge_base.similarity_search(user_question)
 
   # To lets use a slower model.
-    llm = OpenAI(model_name="text-davinci-002", n=2, best_of=2)
+    llm = OpenAI(model_name="gpt-3.5-turbo")
     chain = load_qa_chain(llm, chain_type="stuff")
     with get_openai_callback() as cb:
         response = chain.run(input_documents=docs, question=user_question)
